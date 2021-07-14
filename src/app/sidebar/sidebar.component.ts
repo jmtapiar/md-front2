@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { TokenStorageService } from '../services/token-storage.service';
+import { AuthService } from "@auth0/auth0-angular";
 
 
 declare interface submenu {
@@ -28,12 +29,15 @@ export class SidebarComponent implements OnInit {
   novedades:boolean;
   isLoggedIn=false;
 
-  constructor(private tokenStorage:TokenStorageService) { }
+  constructor(private tokenStorage:TokenStorageService,
+              private auth:AuthService   ) { }
 
   ngOnInit(): void {
     this.menu = RUTAS.filter(menu => menu);
     console.log(this.menu);
-    this.isLoggedIn = !!this.tokenStorage.getToken();
+    this.auth.isAuthenticated$.subscribe(res=>{
+      this.isLoggedIn = res;
+    })
   }
 
   isMobileMenu() {

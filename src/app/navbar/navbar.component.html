@@ -15,7 +15,7 @@
     <!-- Right navbar links -->
     <ul class="navbar-nav ml-auto">
       <!-- Messages Dropdown Menu -->
-      <li class="nav-item dropdown">
+      <li *ngIf="isLoggedIn" class="nav-item dropdown">
         <a class="nav-link" data-toggle="dropdown" href="#">
           <i class="far fa-comments"></i>
           <span class="badge badge-danger navbar-badge">3</span>
@@ -73,7 +73,7 @@
         </div>
       </li>
       <!-- Notifications Dropdown Menu -->
-      <li class="nav-item dropdown">
+      <li *ngIf="isLoggedIn" class="nav-item dropdown">
         <a class="nav-link" data-toggle="dropdown" href="#">
           <i class="far fa-bell"></i>
           <span class="badge badge-warning navbar-badge">15</span>
@@ -101,7 +101,7 @@
       </li>
 
       <li class="nav-item dropdown">
-        <a *ngIf="(!auth.isAuthenticated$ | async)" class="nav-link" data-toggle="dropdown" href="#">
+        <a *ngIf="!isLoggedIn" class="nav-link" data-toggle="dropdown" href="#">
           <i class="far fa-address-card fa-2x"></i>
           <div class="dropdown-menu dropdown-menu-lg dropdown-menu-right">
             <a (click)="auth.loginWithRedirect()" class="dropdown-item btn-primary">
@@ -113,11 +113,8 @@
              </a>          
           </div>
         </a>
-        <a *ngIf="(auth.isAuthenticated$ | async)" class="nav-link" data-toggle="dropdown" href="#">
+        <a *ngIf="isLoggedIn" class="nav-link" data-toggle="dropdown" href="#">
           <button type="button" class="btn btn-block btn-danger" (click)="auth.logout()">Salir</button>
-        </a>
-        <a class="nav-link" data-toggle="dropdown" href="#">
-          <button type="button" class="btn btn-block btn-primary" (click)="loggedIn()">Verifica</button>
         </a>
       </li>
     </ul>
