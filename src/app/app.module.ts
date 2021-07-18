@@ -7,10 +7,19 @@ import { SidebarComponent } from './sidebar/sidebar.component';
 import { FooterComponent } from './footer/footer.component';
 import { IngresoComponent } from './ingreso/ingreso.component';
 import { TarjetaComponent } from './tarjeta/tarjeta.component';
+import { HttpClientModule } from '@angular/common/http';
+import { CommonModule } from '@angular/common';
 
 
 // Import the module from the SDK
 import { AuthModule } from '@auth0/auth0-angular';
+import { EmpresasComponent } from './empresas/empresas.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+
+////angular material
+import { MatTableModule} from '@angular/material/table';
+import { MatFormFieldModule } from '@angular/material/form-field';
+import { MatInputModule } from '@angular/material/input';
 
 @NgModule({
   declarations: [
@@ -19,7 +28,8 @@ import { AuthModule } from '@auth0/auth0-angular';
     SidebarComponent,
     FooterComponent,
     IngresoComponent,
-    TarjetaComponent
+    TarjetaComponent,
+    EmpresasComponent
   ],
   imports: [
     BrowserModule,
@@ -30,6 +40,12 @@ import { AuthModule } from '@auth0/auth0-angular';
       cacheLocation:'localstorage',
       useRefreshTokens:true
     }),
+    HttpClientModule,
+    CommonModule,
+    BrowserAnimationsModule,
+    MatTableModule,
+    MatFormFieldModule,
+    MatInputModule
   ],
   providers: [],
   bootstrap: [AppComponent]

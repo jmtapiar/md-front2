@@ -59,12 +59,12 @@ export const RUTAS: rutaSide[] = [
   }
 ,
   {
-    path: "ingresoempresa",
+    path: "empresas",
     title: "Empresas",
     icon: "fa-university",
     class: "",
     new:0,
-    submenu:[{path:'ingresoempresa',title:'Nuevo'},
+    submenu:[{path:'Empresas',title:'Nuevo'},
     {path:'editar',title:'Editar'}
 ]
   },
