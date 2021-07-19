@@ -1,23 +1,30 @@
-<div class="wrapper">
-  <!-- Main Navbar Container -->
-  <app-navbar></app-navbar>
-  <!-- Main Sidebar Container -->
-  <app-sidebar></app-sidebar>
-
-  <!-- Content Wrapper. Contains page content -->
-  <div class="content-wrapper">
-    
-
-    <!-- Main content -->
-    <section class="content">
-      <router-outlet></router-outlet>
-    </section>
-    <!-- /.content -->
-  </div>
-  <!-- /.content-wrapper -->
-
-
-  <!-- Main Footer -->
-<app-footer></app-footer>
+<div class="container" *ngIf="(auth.isLoading$ | async); else loaded">
+  <app-loading></app-loading>
 </div>
-<!-- ./wrapper -->
+
+<ng-template #loaded>
+  <div class="wrapper">
+    <!-- Main Navbar Container -->
+    <app-navbar></app-navbar>
+    <!-- Main Sidebar Container -->
+    <app-sidebar></app-sidebar>
+  
+    <!-- Content Wrapper. Contains page content -->
+    <div class="content-wrapper">
+      
+  
+      <!-- Main content -->
+      <section class="content">
+        <router-outlet></router-outlet>
+      </section>
+      <!-- /.content -->
+    </div>
+    <!-- /.content-wrapper -->
+  
+  
+    <!-- Main Footer -->
+  <app-footer></app-footer>
+  </div>
+  <!-- ./wrapper -->
+
+</ng-template>
