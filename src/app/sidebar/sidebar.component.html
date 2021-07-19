@@ -15,8 +15,8 @@
         <div class="image">
           <img src="assets/img/user2-160x160.jpg" class="img-circle elevation-2" alt="User Image">
         </div>
-        <div class="info">
-          <a href="#" class="d-block">Jonnathan Tapia</a>
+        <div class="info" *ngIf="auth.user$|async as user">
+          <a href="#" class="d-block">{{user.name}} </a>
         </div>
       </div>
 
