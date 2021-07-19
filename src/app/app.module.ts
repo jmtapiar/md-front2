@@ -5,7 +5,6 @@ import { AppComponent } from './app.component';
 import { NavbarComponent } from './navbar/navbar.component';
 import { SidebarComponent } from './sidebar/sidebar.component';
 import { FooterComponent } from './footer/footer.component';
-import { IngresoComponent } from './ingreso/ingreso.component';
 import { TarjetaComponent } from './tarjeta/tarjeta.component';
 import { HttpClientModule } from '@angular/common/http';
 import { CommonModule } from '@angular/common';
@@ -28,7 +27,6 @@ import { LoadingComponent } from './loading/loading.component';
     NavbarComponent,
     SidebarComponent,
     FooterComponent,
-    IngresoComponent,
     TarjetaComponent,
     EmpresasComponent,
     LoadingComponent

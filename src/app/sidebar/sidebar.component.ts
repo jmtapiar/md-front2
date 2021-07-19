@@ -28,17 +28,20 @@ export class SidebarComponent implements OnInit {
   menu: any[];
   novedades:boolean;
   isLoggedIn=false;
-  profileJson: string = null;
 
   constructor(private tokenStorage:TokenStorageService,
               public auth:AuthService   ) { }
 
   ngOnInit(): void {
     this.menu = RUTAS.filter(menu => menu);
-    this.auth.user$.subscribe(
-      (profile) => (this.profileJson = JSON.stringify(profile, null, 2))
+    this.auth.isAuthenticated$.subscribe(logged =>{this.isLoggedIn = logged;}
     );
-      console.log(this.profileJson);
+    this.auth.user$.subscribe(
+      profile=>{
+        console.log(profile);
+
+      }
+    );
         
   }
 
