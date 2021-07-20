@@ -1,4 +1,4 @@
-import { NgModule } from '@angular/core';
+import { NgModule,CUSTOM_ELEMENTS_SCHEMA  } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -9,6 +9,7 @@ import { IngresoComponent } from './ingreso/ingreso.component';
 import { TarjetaComponent } from './tarjeta/tarjeta.component';
 import { HttpClientModule } from '@angular/common/http';
 import { CommonModule } from '@angular/common';
+import { FormsModule } from '@angular/forms';
 
 
 // Import the module from the SDK
@@ -20,6 +21,9 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatTableModule} from '@angular/material/table';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
+import { NewempresaComponent } from './empresas/newempresa/newempresa.component';
+
+
 
 @NgModule({
   declarations: [
@@ -29,7 +33,8 @@ import { MatInputModule } from '@angular/material/input';
     FooterComponent,
     IngresoComponent,
     TarjetaComponent,
-    EmpresasComponent
+    EmpresasComponent,
+    NewempresaComponent
   ],
   imports: [
     BrowserModule,
@@ -45,9 +50,12 @@ import { MatInputModule } from '@angular/material/input';
     BrowserAnimationsModule,
     MatTableModule,
     MatFormFieldModule,
-    MatInputModule
+    MatInputModule,
+    FormsModule,
+
   ],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
+  schemas: [ CUSTOM_ELEMENTS_SCHEMA ]
 })
 export class AppModule { }

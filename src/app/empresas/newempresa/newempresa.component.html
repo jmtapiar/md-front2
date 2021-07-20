@@ -1,0 +1,67 @@
+
+<div class="modal fade" id="Mnewempresa" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel">Nueva Empresa</h5>
+          <mat-slider aria-label="unit(s)"></mat-slider>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          <form class="form-book" *ngIf="!isSuccessful" name="form" (ngSubmit)="onSubmit(f)" #f="ngForm" novalidate>
+              <div class="form-group">
+                <input type="hidden" id="idem" name="bookId" class="form-control" [(ngModel)]="this.EmpresasService.selData.id">
+               
+                <label for="Primernom">Primer Nombre</label>
+                <input type="text" class="form-control" id="Primernom" placeholder="Primer Nombre" [(ngModel)]="this.EmpresasService.selData.nombre1e" name="nombre1e">
+  
+                <label for="Segundonom">Segundo Nombre</label>
+                <input type="text" class="form-control" id="Segundonom" placeholder="Segundo Nombre" [(ngModel)]="this.EmpresasService.selData.nombre2e" name="nombre2e">
+  
+                <label for="Primerap">Primer Apellido</label>
+                <input type="text" class="form-control" id="Primerap" placeholder="Primer Apellido" [(ngModel)]="this.EmpresasService.selData.apellido1e" name="apellido1e">
+  
+                <label for="Segundoap">Segundo Apellido</label>
+                <input type="text" class="form-control" id="Segundoap" placeholder="Segundo Apellido" [(ngModel)]="this.EmpresasService.selData.apellido2e" name="apellido2e">
+  
+                <label for="Empresa">Empresa</label>
+                <input type="text" class="form-control" id="empresa"  placeholder="Empresa" [(ngModel)]="this.EmpresasService.selData.empresa" name="empresa">
+  
+                <label for="Direccionep">Direccion</label>
+                <input type="text" class="form-control" id="Direccionep" placeholder="Direccion" [(ngModel)]="this.EmpresasService.selData.direccione" name="direccione">
+  
+                <label for="Rucep">Ruc</label>
+                <input type="text" class="form-control" id="Rucep" placeholder="Ruc" [(ngModel)]="this.EmpresasService.selData.ruc" name="ruc">
+  
+                <label for="Emailep">Email</label>
+                <input type="email" class="form-control" id="Emailep" placeholder="Email" [(ngModel)]="this.EmpresasService.selData.emaile" name="emaile">
+  
+  
+              </div>
+           
+            
+        
+            <!-- /.box-body -->
+      
+            <div class="modal-footer">
+              <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+              <button type="submit" class="btn btn-primary ">Save changes</button>
+            </div>
+            <div class="alert alert-warning" *ngIf="f.submitted && isSignUpFailed">
+              No se Puede Crear Empresa!<br />{{ errorMessage }}
+            </div>
+          </form>
+          <div class="alert alert-success" *ngIf="isSuccessful">
+           Se creo correctamente la Empresa!
+          </div>
+        </div>
+     
+        
+      </div>
+    </div>
+  </div>
+  
+  
+  

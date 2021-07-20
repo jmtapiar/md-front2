@@ -39,6 +39,11 @@ export class EmpresasComponent implements OnInit {
       }
     )
   };
+
+  public selectedEmpre(id: ReqResRespons): void {
+    this.EmpresasService.selData = Object.assign({}, id);
+  };
+
   resetForm(reset?: NgForm): void {
     this.EmpresasService.selData = {
       id: null,
