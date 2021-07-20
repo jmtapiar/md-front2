@@ -32,13 +32,10 @@ import { HomeComponent } from './home/home.component';
     FooterComponent,
     TarjetaComponent,
     EmpresasComponent,
-<<<<<<< HEAD
     LoadingComponent,
-    HomeComponent
-=======
+    HomeComponent,
     NewempresaComponent,
     LoadingComponent
->>>>>>> 65999fe403521aa8a3551d7ef65a728cd40f6797
   ],
   imports: [
     BrowserModule,
