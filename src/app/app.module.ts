@@ -20,6 +20,7 @@ import { MatTableModule} from '@angular/material/table';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
 import { LoadingComponent } from './loading/loading.component';
+import { HomeComponent } from './home/home.component';
 
 @NgModule({
   declarations: [
@@ -29,7 +30,8 @@ import { LoadingComponent } from './loading/loading.component';
     FooterComponent,
     TarjetaComponent,
     EmpresasComponent,
-    LoadingComponent
+    LoadingComponent,
+    HomeComponent
   ],
   imports: [
     BrowserModule,
