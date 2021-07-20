@@ -1,15 +1,13 @@
-import { NgModule,CUSTOM_ELEMENTS_SCHEMA  } from '@angular/core';
+import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { NavbarComponent } from './navbar/navbar.component';
 import { SidebarComponent } from './sidebar/sidebar.component';
 import { FooterComponent } from './footer/footer.component';
-import { IngresoComponent } from './ingreso/ingreso.component';
 import { TarjetaComponent } from './tarjeta/tarjeta.component';
 import { HttpClientModule } from '@angular/common/http';
 import { CommonModule } from '@angular/common';
-import { FormsModule } from '@angular/forms';
 
 
 // Import the module from the SDK
@@ -21,9 +19,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatTableModule} from '@angular/material/table';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
-import { NewempresaComponent } from './empresas/newempresa/newempresa.component';
-
-
+import { LoadingComponent } from './loading/loading.component';
 
 @NgModule({
   declarations: [
@@ -31,10 +27,9 @@ import { NewempresaComponent } from './empresas/newempresa/newempresa.component'
     NavbarComponent,
     SidebarComponent,
     FooterComponent,
-    IngresoComponent,
     TarjetaComponent,
     EmpresasComponent,
-    NewempresaComponent
+    LoadingComponent
   ],
   imports: [
     BrowserModule,
@@ -50,12 +45,9 @@ import { NewempresaComponent } from './empresas/newempresa/newempresa.component'
     BrowserAnimationsModule,
     MatTableModule,
     MatFormFieldModule,
-    MatInputModule,
-    FormsModule,
-
+    MatInputModule
   ],
   providers: [],
-  bootstrap: [AppComponent],
-  schemas: [ CUSTOM_ELEMENTS_SCHEMA ]
+  bootstrap: [AppComponent]
 })
 export class AppModule { }

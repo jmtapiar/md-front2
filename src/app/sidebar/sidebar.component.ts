@@ -30,15 +30,21 @@ export class SidebarComponent implements OnInit {
   isLoggedIn=false;
 
   constructor(private tokenStorage:TokenStorageService,
-              private auth:AuthService   ) { }
+              public auth:AuthService   ) { }
 
   ngOnInit(): void {
     this.menu = RUTAS.filter(menu => menu);
-    console.log(this.menu);
-    this.auth.isAuthenticated$.subscribe(res=>{
-      this.isLoggedIn = res;
-    })
+    this.auth.isAuthenticated$.subscribe(logged =>{this.isLoggedIn = logged;}
+    );
+    this.auth.user$.subscribe(
+      profile=>{
+        console.log(profile);
+
+      }
+    );
+        
   }
+
 
   isMobileMenu() {
     if (window.innerWidth > 991) {

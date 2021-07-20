@@ -101,7 +101,7 @@
       </li>
 
       <li class="nav-item dropdown">
-        <a *ngIf="!isLoggedIn" class="nav-link" data-toggle="dropdown" href="#">
+        <a *ngIf="!isLoggedIn" class="nav-link" data-toggle="dropdown">
           <i class="far fa-address-card fa-2x"></i>
           <div class="dropdown-menu dropdown-menu-lg dropdown-menu-right">
             <a (click)="auth.loginWithRedirect()" class="dropdown-item btn-primary">
@@ -113,7 +113,7 @@
              </a>          
           </div>
         </a>
-        <a *ngIf="isLoggedIn" class="nav-link" data-toggle="dropdown" href="#">
+        <a *ngIf="isLoggedIn" class="nav-link" data-toggle="dropdown" >
           <button type="button" class="btn btn-block btn-danger" (click)="auth.logout()">Salir</button>
         </a>
       </li>
