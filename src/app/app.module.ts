@@ -1,4 +1,4 @@
-import { NgModule } from '@angular/core';
+import { NgModule,CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -8,11 +8,13 @@ import { FooterComponent } from './footer/footer.component';
 import { TarjetaComponent } from './tarjeta/tarjeta.component';
 import { HttpClientModule } from '@angular/common/http';
 import { CommonModule } from '@angular/common';
+import { FormsModule } from '@angular/forms';
 
 
 // Import the module from the SDK
 import { AuthModule } from '@auth0/auth0-angular';
 import { EmpresasComponent } from './empresas/empresas.component';
+import { NewempresaComponent } from './empresas/newempresa/newempresa.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 ////angular material
@@ -30,8 +32,13 @@ import { HomeComponent } from './home/home.component';
     FooterComponent,
     TarjetaComponent,
     EmpresasComponent,
+<<<<<<< HEAD
     LoadingComponent,
     HomeComponent
+=======
+    NewempresaComponent,
+    LoadingComponent
+>>>>>>> 65999fe403521aa8a3551d7ef65a728cd40f6797
   ],
   imports: [
     BrowserModule,
@@ -47,9 +54,11 @@ import { HomeComponent } from './home/home.component';
     BrowserAnimationsModule,
     MatTableModule,
     MatFormFieldModule,
-    MatInputModule
+    MatInputModule,
+    FormsModule
   ],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
+  schemas: [ CUSTOM_ELEMENTS_SCHEMA ]
 })
 export class AppModule { }
