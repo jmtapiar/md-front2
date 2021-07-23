@@ -20,6 +20,7 @@ export class EmpresasComponent implements OnInit {
   isSignUpFailed = false;
   errorMessage = '';
   value = 'Clear me';
+  activo=0;
   applyFilter(event: Event) {
     const filterValue = (event.target as HTMLInputElement).value;
     this.dataSource.filter = filterValue.trim().toLowerCase();
@@ -28,17 +29,31 @@ export class EmpresasComponent implements OnInit {
   constructor(private EmpresasService:EmpresasService, private location: Location ) { }
 
   ngOnInit(): void {
-    this.listEmpresas();   
+   this.listEmpresas(this.activo);   
   }
   
-  public listEmpresas() {
-    this.EmpresasService.listEmpresa().subscribe(
+  public listEmpresas(activo) {
+    this.EmpresasService.listoneEmpresaact(activo).subscribe(
       (data) => {
         this.listEmpre = data.data;
         this.dataSource = new MatTableDataSource(data.data);
       }
     )
   };
+
+  DelEmpresa(id: number): void {
+    console.log(id);
+    if (confirm('¿Estás seguro de eliminar?')) {
+      this.EmpresasService.editEmpresa(id).subscribe(
+        (data) => {
+          this.listEmpre = data.data;
+          location.reload();
+        }
+      )
+    }
+  };
+
+
 
   public selectedEmpre(id: ReqResRespons): void {
     this.EmpresasService.selData = Object.assign({}, id);
@@ -47,14 +62,13 @@ export class EmpresasComponent implements OnInit {
   resetForm(reset?: NgForm): void {
     this.EmpresasService.selData = {
       id: null,
-      nombre1e: '',
-      nombre2e: '',
-      apellido1e: '',
-      apellido2e: '',
+      representantelegal: '',
+      cirepresentante: '',
       empresa: '',
       direccione: '',
       ruc: '',
       emaile: '',
+      activo:''
     }
   };
 

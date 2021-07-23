@@ -2,14 +2,13 @@ export interface ReqResRespons {
     //   mensaje: string;
     data: ReqEmpre[];
     id: ReqEmpre['id'];
+    activo: ReqEmpre['activo'];
 }
 
 interface ReqEmpre {
     id: number;
-    nombre1e?: string;
-    nombre2e?: string;
-    apellido1e?: string;
-    apellido2e?: string;
+    representantelegal?:   string;
+    cirepresentante?:   string;
     empresa?: string;
     direccione?: string;
     ruc?: string;
@@ -18,4 +17,5 @@ interface ReqEmpre {
     createdAt: Date;
     updatedAt: Date;
     emaile?: string;
+    activo?:string;
 }

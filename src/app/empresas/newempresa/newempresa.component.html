@@ -14,17 +14,11 @@
               <div class="form-group">
                 <input type="hidden" id="idem" name="bookId" class="form-control" [(ngModel)]="this.EmpresasService.selData.id">
                
-                <label for="Primernom">Primer Nombre</label>
-                <input type="text" class="form-control" id="Primernom" placeholder="Primer Nombre" [(ngModel)]="this.EmpresasService.selData.nombre1e" name="nombre1e">
+                <label for="representantelegal">Nombre Representante Legal</label>
+                <input type="text" class="form-control" id="representantelegal" placeholder="Nombre Representante Legal" [(ngModel)]="this.EmpresasService.selData.representantelegal" name="representantelegal">
   
-                <label for="Segundonom">Segundo Nombre</label>
-                <input type="text" class="form-control" id="Segundonom" placeholder="Segundo Nombre" [(ngModel)]="this.EmpresasService.selData.nombre2e" name="nombre2e">
-  
-                <label for="Primerap">Primer Apellido</label>
-                <input type="text" class="form-control" id="Primerap" placeholder="Primer Apellido" [(ngModel)]="this.EmpresasService.selData.apellido1e" name="apellido1e">
-  
-                <label for="Segundoap">Segundo Apellido</label>
-                <input type="text" class="form-control" id="Segundoap" placeholder="Segundo Apellido" [(ngModel)]="this.EmpresasService.selData.apellido2e" name="apellido2e">
+                <label for="cirepresentante">CI Representante</label>
+                <input type="text" class="form-control" id="cirepresentante" placeholder="CI Representante" [(ngModel)]="this.EmpresasService.selData.cirepresentante" name="cirepresentante">
   
                 <label for="Empresa">Empresa</label>
                 <input type="text" class="form-control" id="empresa"  placeholder="Empresa" [(ngModel)]="this.EmpresasService.selData.empresa" name="empresa">

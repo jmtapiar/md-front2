@@ -6,6 +6,7 @@ import { map } from 'rxjs/internal/operators';
 
 
 const AUTH_API = 'http://localhost:8080/empresas/';
+const AUTH_API2 = 'http://localhost:8080/empresasact/';
 const httpOptions = {
   headers: new HttpHeaders({ 'Content-Type': 'application/json' })
 };
@@ -20,8 +21,8 @@ export class EmpresasService {
   public selectedEmpre :ReqResRespons=
   {
     data: this.selData,
-    id: null
-  
+    id: null,
+    activo:'0',
   }
   listEmpresa() {
     return this.http.get<ReqResRespons>(AUTH_API, httpOptions);
@@ -42,5 +43,10 @@ export class EmpresasService {
   listoneEmpresa(form: ReqResRespons): Observable<any> {
     return this.http.get(AUTH_API + form.id, httpOptions);
   }
+
+  listoneEmpresaact(form: ReqResRespons): Observable<any> {
+    return this.http.get(AUTH_API2 + form.activo, httpOptions);
+  }
+
 
 }
