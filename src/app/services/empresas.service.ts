@@ -22,7 +22,7 @@ export class EmpresasService {
   {
     data: this.selData,
     id: null,
-    activo:'0',
+    activo:0,
   }
   listEmpresa() {
     return this.http.get<ReqResRespons>(AUTH_API, httpOptions);
@@ -44,8 +44,13 @@ export class EmpresasService {
     return this.http.get(AUTH_API + form.id, httpOptions);
   }
 
-  listoneEmpresaact(form: ReqResRespons): Observable<any> {
-    return this.http.get(AUTH_API + form.activo, httpOptions);
+  listoneEmpresaact(activo): Observable<any> {
+    return this.http.get(AUTH_API2 + activo, httpOptions);
+  }
+
+  deleteEmpresa(form): Observable<any> {
+    return this.http.put(AUTH_API+"del/"+form, httpOptions)
+    .pipe(map(data => data));
   }
 
 

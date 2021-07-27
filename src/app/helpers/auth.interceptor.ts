@@ -31,7 +31,6 @@ export class AuthInterceptor implements HttpInterceptor {
     this.auth.idTokenClaims$.subscribe(claims => {
       this.idt=claims.__raw;
       
-      
     })
     if(this.idt!= null)
       {

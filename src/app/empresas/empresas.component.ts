@@ -32,8 +32,8 @@ export class EmpresasComponent implements OnInit {
    this.listEmpresas(this.activo);   
   }
   
-  public listEmpresas(activo) {
-    this.EmpresasService.listEmpresa().subscribe(
+  listEmpresas(activo) {
+    this.EmpresasService.listoneEmpresaact(this.activo).subscribe(
       (data) => {
         this.listEmpre = data.data;
         this.dataSource = new MatTableDataSource(data.data);
@@ -41,10 +41,10 @@ export class EmpresasComponent implements OnInit {
     )
   };
 
-  DelEmpresa(id: number): void {
+  deleteEmpresa(id: number): void {
     console.log(id);
     if (confirm('¿Estás seguro de eliminar?')) {
-      this.EmpresasService.editEmpresa(id).subscribe(
+      this.EmpresasService.deleteEmpresa(id).subscribe(
         (data) => {
           this.listEmpre = data.data;
           location.reload();

@@ -17,5 +17,5 @@ interface ReqEmpre {
     createdAt: Date;
     updatedAt: Date;
     emaile?: string;
-    activo?:string;
+    activo?:number;
 }

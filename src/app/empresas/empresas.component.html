@@ -3,7 +3,7 @@
   <button class="btn btn-primary float-right mb-3 " type="button" data-toggle="modal" data-target="#Mnewempresa"
   (click)="resetForm()">New</button>
 
-  <mat-form-field>
+  <mat-form-field appearance="standard">
     <!--  <mat-label ></mat-label>
   -->
 
@@ -52,7 +52,7 @@
       <mat-cell *matCellDef="let element">
         <button class="btn btn-primary" type="button" data-toggle="modal" (click)="selectedEmpre(element)"
           data-target="#Mnewempresa">Actualizar</button>
-        <button class="btn btn-danger" type="button" data-toggle="modal" (click)="DelEmpresa(element.id)">Borrar</button>
+        <button class="btn btn-danger" type="button" data-toggle="modal" (click)="deleteEmpresa(element.id)">Borrar</button>
       </mat-cell>
     </ng-container>
 
