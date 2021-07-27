@@ -33,7 +33,7 @@ export class EmpresasComponent implements OnInit {
   }
   
   public listEmpresas(activo) {
-    this.EmpresasService.listoneEmpresaact(activo).subscribe(
+    this.EmpresasService.listEmpresa().subscribe(
       (data) => {
         this.listEmpre = data.data;
         this.dataSource = new MatTableDataSource(data.data);

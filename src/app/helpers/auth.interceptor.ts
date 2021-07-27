@@ -30,13 +30,14 @@ export class AuthInterceptor implements HttpInterceptor {
     let authReq = request;
     this.auth.idTokenClaims$.subscribe(claims => {
       this.idt=claims.__raw;
-    }  );
+      
+      
+    })
     if(this.idt!= null)
-    {
-      authReq = request.clone({ headers: request.headers.set(TOKEN_HEADER_KEY,`Bearer ${this.idt}` ) });
-    }
+      {
+        authReq = request.clone({ headers: request.headers.set(TOKEN_HEADER_KEY,`Bearer ${this.idt}` ) });
+      }
     return next.handle(authReq);
-    
   }
   
 }

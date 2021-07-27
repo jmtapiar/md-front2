@@ -45,7 +45,7 @@ export class EmpresasService {
   }
 
   listoneEmpresaact(form: ReqResRespons): Observable<any> {
-    return this.http.get(AUTH_API2 + form.activo, httpOptions);
+    return this.http.get(AUTH_API + form.activo, httpOptions);
   }
 
 
